@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2713841038614814168}
   - component: {fileID: 5810842966782519380}
   - component: {fileID: 5321735950110261304}
+  - component: {fileID: 7490871948588233866}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4491876777676456726}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.4959998, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyInterval: 10
   savedVelocity: {x: 0, y: 0}
-  startingForce: 5
+  startingForce: 6
 --- !u!114 &5810842966782519380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +210,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190c177a9834453e8f7710a777d53513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 3.5
+  minSpeed: 5
   maxSpeed: 100
   debugInfo: 0
   currentSpeed: 0
+--- !u!114 &7490871948588233866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491876777676456726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335319d10167496b890096ba038a3262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stuckPeriod: 12.8
+  verticalFactor: 5
+  horizontalFactor: 1.35
