@@ -27,7 +27,6 @@ namespace Infrastructure.InputService
     public void Tick()
     {
       IsAttackButtonPressedReactive.Value = IsAttackButtonPressed();
-      Debug.Log($"Attack button = {IsAttackButtonPressedReactive.Value}");
       IsCancelPressedReactive.Value = IsAttackButtonPressed();
     }
 
