@@ -22,6 +22,6 @@ namespace Gameplay.Buffs
     }
 
     private void Execute(Collision2D collision2D) =>
-        Execute(collision2D.rigidbody.gameObject, collision2D.otherRigidbody.gameObject);
+        Execute(collision2D.collider.gameObject, collision2D.otherCollider.gameObject);
     }
 }
