@@ -10,6 +10,7 @@ namespace Gameplay.Buffs
 
     protected override void Awake()
     {
+        base.Awake();
         _collisionHandler = GetComponent<CollisionHandler>();
     }
 
