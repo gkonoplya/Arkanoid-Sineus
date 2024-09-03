@@ -52,7 +52,7 @@ namespace Gameplay.Buffs
                 .ObserveEveryValueChanged(tr => tr.position)
                 .Where(_ => !_rb.simulated)
                 .Subscribe(position => self.transform.position = position + offset)
-                .AddTo(this);
+                .AddTo(disposable);
         }
 
         protected virtual void ActivateBall(Rigidbody2D rb) =>
