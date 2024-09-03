@@ -38,7 +38,7 @@ namespace Gameplay.Buffs
             }
         }
 
-        protected override void Execute(GameObject target, GameObject self)
+        public override void Execute(GameObject target, GameObject self)
         {
             if (!target.TryGetComponent<Paddle>(out var paddle)) 
                 return;

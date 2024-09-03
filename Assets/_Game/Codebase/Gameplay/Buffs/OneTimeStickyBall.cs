@@ -7,7 +7,7 @@ namespace Gameplay.Buffs
         public float startingForce = 5f;
         private Rigidbody2D _paddleRb;
 
-        protected override void Execute(GameObject target, GameObject self)
+        public override void Execute(GameObject target, GameObject self)
         {
             _paddleRb = target.GetComponent<Rigidbody2D>();
             base.Execute(target, self);

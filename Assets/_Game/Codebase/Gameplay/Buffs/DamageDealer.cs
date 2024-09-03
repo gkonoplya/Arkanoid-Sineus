@@ -6,7 +6,7 @@ namespace Gameplay.Buffs
     {
         public float amount;
 
-        protected override void Execute(GameObject target, GameObject self)
+        public override void Execute(GameObject target, GameObject self)
         {
             if (!target.TryGetComponent<Health>(out var health))
                 return;

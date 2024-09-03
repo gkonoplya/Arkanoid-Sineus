@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gameplay.Buffs
 {
-    public abstract class TimedBuff: MonoBehaviour
+    public abstract class TimedBuff: MonoBehaviour, IBuff
     {
         public float destroyInterval;
         private protected CompositeDisposable disposable = new();
@@ -22,6 +22,6 @@ namespace Gameplay.Buffs
             disposable.Dispose();
         }
 
-        protected abstract void Execute(GameObject target, GameObject self);
+        public abstract void Execute(GameObject target, GameObject self);
     }
 }
