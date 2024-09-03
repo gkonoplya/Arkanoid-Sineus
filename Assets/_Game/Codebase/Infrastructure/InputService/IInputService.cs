@@ -1,3 +1,4 @@
+using UniRx;
 using UnityEngine;
 
 namespace Infrastructure.InputService
@@ -6,7 +7,7 @@ namespace Infrastructure.InputService
   {
     Vector2 Axis { get; }
     bool Active { get; set; }
-    bool IsAttackButtonPressed();
-    bool IsCancelPressed();
+    ReactiveProperty<bool> IsAttackButtonPressedReactive { get; }
+    ReactiveProperty<bool> IsCancelPressedReactive { get; }
   }
 }

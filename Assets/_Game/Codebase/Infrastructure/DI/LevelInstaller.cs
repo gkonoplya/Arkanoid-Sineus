@@ -5,6 +5,6 @@ public class LevelInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+        Container.BindInterfacesAndSelfTo<StandaloneInputService>().AsSingle();
     }
 }
