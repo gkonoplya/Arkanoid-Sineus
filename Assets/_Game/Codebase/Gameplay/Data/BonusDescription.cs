@@ -1,11 +1,10 @@
 ﻿using System;
 using Gameplay.Buffs;
-using UnityEngine;
 
 namespace Gameplay.Data
 {
-    [CreateAssetMenu(fileName = "bonusDescription", menuName = "StaticData/BonusDescription", order = 50)]
-    public class BonusDescription: ScriptableObject
+    [Serializable]
+    public class BonusDescription
     {
         public BuffKinds Kind;
         public BonusTargets Target;

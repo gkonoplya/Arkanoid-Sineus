@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b993665b1f6549f1ab42286d746f66b5, type: 3}
-  m_Name: bonusDescription
+  m_Name: Expand
   m_EditorClassIdentifier: 
-  Kind: 200
-  Target: 0
-  Probability: 1
-  Duration: 30
+  description:
+    Kind: 200
+    Target: 0
+    Probability: 0.2
+    Duration: 30
