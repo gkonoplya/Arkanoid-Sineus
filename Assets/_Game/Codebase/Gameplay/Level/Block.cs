@@ -32,7 +32,7 @@ namespace Gameplay.Level
             {
                 type = Type,
                 Color = GetComponent<SpriteRenderer>().color,
-                Position = transform.localPosition,
+                Position = transform.parent.localPosition,
                 currentHealth = health?.amount.Value,
                 maxHealth = health?.MaxHealth ?? 0f
             };
