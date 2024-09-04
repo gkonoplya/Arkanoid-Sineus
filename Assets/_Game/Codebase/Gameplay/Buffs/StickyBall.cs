@@ -51,7 +51,7 @@ namespace Gameplay.Buffs
 
         protected virtual void Execute(GameObject target, GameObject self)
         {
-            if (!target.TryGetComponent<Paddle>(out var paddle) || !this) 
+            if (!target.TryGetComponent<Paddle.Paddle>(out var paddle) || !this) 
                 return;
             
             _rb = self.GetComponent<Rigidbody2D>();

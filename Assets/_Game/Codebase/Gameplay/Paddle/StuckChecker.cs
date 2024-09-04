@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gameplay
+namespace Gameplay.Paddle
 {
     [RequireComponent(typeof(CollisionHandler), typeof(Rigidbody2D))]
     public class StuckChecker: MonoBehaviour

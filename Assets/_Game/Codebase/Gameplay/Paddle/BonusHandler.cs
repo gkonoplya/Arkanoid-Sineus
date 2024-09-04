@@ -1,8 +1,7 @@
-﻿using System;
-using Gameplay.Buffs;
+﻿using Gameplay.Buffs;
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Paddle
 {
     public class BonusHandler: MonoBehaviour
     {

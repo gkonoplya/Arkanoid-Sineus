@@ -1,9 +1,7 @@
-﻿using System;
-using UniRx;
+﻿using UniRx;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Gameplay
+namespace Gameplay.Paddle
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class SpeedLimiter: MonoBehaviour

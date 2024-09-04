@@ -1,8 +1,9 @@
 using Infrastructure.InputService;
+using Infrastructure.Utils;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay
+namespace Gameplay.Paddle
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMove: MonoBehaviour
