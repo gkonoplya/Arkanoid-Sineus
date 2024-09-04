@@ -9,7 +9,7 @@ namespace Gameplay
     {
         public List<Color> colorList;
 
-        private void Start() => 
-            GetComponent<SpriteRenderer>().color = colorList.Random();
+        public void SetColor(Color? color = null) => 
+            GetComponent<SpriteRenderer>().color = color ?? colorList.Random();
     }
 }
