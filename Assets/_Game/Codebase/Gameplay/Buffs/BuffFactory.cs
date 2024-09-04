@@ -18,7 +18,16 @@ namespace Gameplay.Buffs
 
         public TimedMonobeh AddBuff(BonusDescription description)
         {
-            var component = _iInstatiator.InstantiateComponent(description.Type, GetTarget(description.Target)) as TimedMonobeh;
+            GameObject target = GetTarget(description.Target);
+
+            if (target.TryGetComponent(description.Type, out var bonusComponent))
+            {
+                var bonus = bonusComponent as TimedMonobeh;
+                bonus.AddTime(description.Duration);
+                return bonus;
+            }
+            
+            var component = _iInstatiator.InstantiateComponent(description.Type, target) as TimedMonobeh;
             component.InitTimer(description.Duration);
             return component;
         }
