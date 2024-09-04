@@ -15,6 +15,7 @@ namespace Infrastructure.DI
             Container.BindInterfacesAndSelfTo<StandaloneInputService>().AsSingle();
             Container.Bind<BonusFactory>().AsSingle();
             Container.Bind<BuffFactory>().AsSingle();
+            Container.Bind<ProjectileFactory>().AsSingle();
             Container.BindInstance(levelData).AsSingle();
             Container.BindInstance(assetProvider).AsSingle();
 

@@ -38,7 +38,10 @@ MonoBehaviour:
     isExpanded: 1
     _keyValues:
     - Bonus
+    - Laser
     _keys:
     - Bonus
+    - Laser
     _values:
     - {fileID: 4402699285379236034, guid: fac5af96468c43f4799fdc42438eecaa, type: 3}
+    - {fileID: 8259422086691461280, guid: 4b2c4977a70307542a5a5a56ef119654, type: 3}

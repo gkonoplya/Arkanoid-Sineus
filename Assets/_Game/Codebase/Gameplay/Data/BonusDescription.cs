@@ -15,9 +15,9 @@ namespace Gameplay.Data
         {
             BuffKinds.StickyBall => typeof(StickyBall),
             BuffKinds.Expand => typeof(ExpandPaddle),
-            /*BuffKinds.Shrink => expr,
-            BuffKinds.LaserCanon => expr,
-            BuffKinds.TripleBall => expr,
+            //BuffKinds.Shrink => expr,
+            BuffKinds.LaserCanon => typeof(LaserCanon),
+            /*BuffKinds.TripleBall => expr,
             BuffKinds.FasterBall => expr,
             BuffKinds.SlowerBall => expr,
             BuffKinds.MegaBall => expr,

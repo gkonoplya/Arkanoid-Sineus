@@ -796,8 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9152297b4d664a05ae2dfa34df275ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptions:
-  - {fileID: 11400000, guid: c3177f78d2276bd46bfc574597f21bd1, type: 2}
+  descriptionsSO: []
   lootProbability: 1
 --- !u!1 &1424073851
 GameObject:
@@ -1180,6 +1179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6403099753221166899, guid: efa6d51eae134314196d3b63485e7f9d, type: 3}
+      propertyPath: lootProbability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403099753221166899, guid: efa6d51eae134314196d3b63485e7f9d, type: 3}
+      propertyPath: 'descriptionsSO.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 86bc7f00f3f844c4285c69af3551ccf9, type: 2}
     - target: {fileID: 7645817389185898488, guid: efa6d51eae134314196d3b63485e7f9d, type: 3}
       propertyPath: m_Name
       value: Blocks
