@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5810842966782519380}
   - component: {fileID: 5321735950110261304}
   - component: {fileID: 7490871948588233866}
+  - component: {fileID: 5641882834905853676}
   m_Layer: 6
   m_Name: Ball
   m_TagString: Untagged
@@ -181,7 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b62a59e150e474d94721559a47f967e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyInterval: 10
+  HasTimer: 1
+  RemainingTime: 10
   savedVelocity: {x: 0, y: 0}
   startingForce: 6
 --- !u!114 &5810842966782519380
@@ -196,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf25ae45e570478faff89c994e78c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyInterval: 1000000
   amount: 1
 --- !u!114 &5321735950110261304
 MonoBehaviour:
@@ -229,3 +230,15 @@ MonoBehaviour:
   stuckPeriod: 12.8
   verticalFactor: 5
   horizontalFactor: 1.35
+--- !u!114 &5641882834905853676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491876777676456726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcd05998c9048c7b2cfb0bc6682a72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

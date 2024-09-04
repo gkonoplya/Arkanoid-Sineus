@@ -2,11 +2,11 @@
 
 namespace Gameplay.Buffs
 {
-    public class DeadzoneTrigger: CollisionBuff
+    public class DeadzoneTrigger: MonoBehaviour
     {
-        public override void Execute(GameObject target, GameObject self)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (!target.TryGetComponent<Deadzone>(out var deadzone) || !deadzone.enabled)
+            if (!other.collider.TryGetComponent<Deadzone>(out var deadzone) || !deadzone.enabled)
                 return;
 
             deadzone.RemoveLife();

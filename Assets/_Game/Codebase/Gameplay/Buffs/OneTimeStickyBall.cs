@@ -7,7 +7,7 @@ namespace Gameplay.Buffs
         public float startingForce = 5f;
         private Rigidbody2D _paddleRb;
 
-        public override void Execute(GameObject target, GameObject self)
+        protected override void Execute(GameObject target, GameObject self)
         {
             _paddleRb = target.GetComponent<Rigidbody2D>();
             base.Execute(target, self);
@@ -15,7 +15,9 @@ namespace Gameplay.Buffs
 
         protected override void ActivateBall(Rigidbody2D rb)
         {
-            savedVelocity = new Vector2(_paddleRb.linearVelocity.x, startingForce);
+            savedVelocity = Mathf.Approximately(_paddleRb.linearVelocity.x, 0f) 
+                ? new Vector2(1f, startingForce)
+                : new Vector2(_paddleRb.linearVelocity.x, startingForce);
             base.ActivateBall(rb);
             Destroy(this);
         }

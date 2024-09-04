@@ -2,13 +2,13 @@
 
 namespace Gameplay.Buffs
 {
-    public class DamageDealer: CollisionBuff
+    public class DamageDealer: MonoBehaviour
     {
         public float amount;
 
-        public override void Execute(GameObject target, GameObject self)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (!target.TryGetComponent<Health>(out var health))
+            if (!other.collider.TryGetComponent<Health>(out var health))
                 return;
 
             health.ApplyDamage(amount);
