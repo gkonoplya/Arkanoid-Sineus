@@ -1,5 +1,6 @@
 ﻿using System;
 using UniRx;
+using UnityEngine;
 
 namespace Gameplay.Buffs
 {
@@ -20,7 +21,7 @@ namespace Gameplay.Buffs
                 .TakeWhile(_ => RemainingTime.Value > 0f)
                 .Subscribe(_ =>
                 {
-                    RemainingTime.Value -= TimerInterval;
+                    RemainingTime.Value -= TimerInterval * Time.timeScale;
                 },
                     () =>
                     {
