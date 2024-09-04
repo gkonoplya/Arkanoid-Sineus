@@ -7,7 +7,7 @@ namespace Infrastructure.DI
 {
     public class LevelInstaller : MonoInstaller
     {
-        public LevelData levelData;
+        public LevelDataProvider levelData;
         public AssetProvider.AssetProvider assetProvider;
 
         public override void InstallBindings()
