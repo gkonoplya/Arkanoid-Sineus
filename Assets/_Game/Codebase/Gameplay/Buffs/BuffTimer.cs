@@ -8,6 +8,8 @@ namespace Gameplay.Buffs
         private const float TimerInterval = 0.1f;
         public readonly FloatReactiveProperty RemainingTime = new();
         private readonly IDisposable _disposable;
+        public bool Disposed { get; private set; }
+
 
         public BuffTimer(float time, Action timerCallback)
         {
@@ -31,6 +33,7 @@ namespace Gameplay.Buffs
         public void Dispose()
         {
             _disposable.Dispose();
+            Disposed = true;
         }
         
 

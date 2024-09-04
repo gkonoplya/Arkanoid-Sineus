@@ -13,6 +13,8 @@ namespace Gameplay.Buffs
         [ShowIf(nameof(HasTimer))]
         public float RemainingTime;
 
+        public bool Active => _timer != null && !_timer.Disposed;
+
         private BuffTimer _timer;
         protected Action TimerCallback { get; set; }
 
@@ -32,5 +34,11 @@ namespace Gameplay.Buffs
         }
 
         public void AddTime(float time) => _timer.RemainingTime.Value += time;
+
+        public void InitTimer(float descriptionDuration)
+        {
+            RemainingTime = descriptionDuration;
+            HasTimer = true;
+        }
     }
 }
