@@ -10,6 +10,5 @@ namespace Gameplay.Level
         public float? currentHealth;
         public float maxHealth;
         public Color Color;
-        public Vector2 Position;
     }
 }

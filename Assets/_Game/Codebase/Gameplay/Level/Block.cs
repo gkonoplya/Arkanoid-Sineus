@@ -6,23 +6,24 @@ namespace Gameplay.Level
     public class Block: MonoBehaviour
     {
         public BlockType Type;
-        private RowData _rowData;
+        private Row _row;
         private bool _inited;
+        public string SpawnPositionName => transform.parent.name; 
 
         private void Start()
         {
+            _row = GetComponentInParent<Row>();
+            _row.AddBlock(this);
+            
             if (_inited)
                 return;
-            
-            _rowData = GetComponentInParent<RowData>();
-            _rowData.AddBlock(this);
             
             GetComponent<ColorSetter>()?.SetColor();
         }
 
         private void OnDisable()
         {
-            _rowData.RemoveBlock(this);
+            _row.RemoveBlock(this);
         }
 
         public BlockData GatherBlockData()
@@ -32,10 +33,23 @@ namespace Gameplay.Level
             {
                 type = Type,
                 Color = GetComponent<SpriteRenderer>().color,
-                Position = transform.parent.localPosition,
                 currentHealth = health?.amount.Value,
                 maxHealth = health?.MaxHealth ?? 0f
             };
+        }
+
+        public void InitWith(BlockData blockData)
+        {
+            _inited = true;
+            if (blockData.currentHealth != null)
+            {
+                Health health = GetComponent<Health>();
+                health.amount.Value = blockData.currentHealth.Value;
+                health.MaxHealth = blockData.maxHealth;
+            }
+
+            GetComponent<SpriteRenderer>().color = blockData.Color;
+            Type = blockData.type;
         }
     }
 }
