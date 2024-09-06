@@ -30,7 +30,9 @@ namespace UI
 
         private void Start()
         {
-            continueButton.gameObject.SetActive(_saveLoadService.Load<ConstructorData>().IsValid());
+            continueButton.gameObject.SetActive(
+                _saveLoadService.Load<PlayerData>().lives.Value >00 &&
+                _saveLoadService.Load<ConstructorData>().IsValid());
             
             continueButton.OnClickAsObservable()
                 .First()

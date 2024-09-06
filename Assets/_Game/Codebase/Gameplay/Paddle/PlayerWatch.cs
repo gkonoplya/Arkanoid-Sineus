@@ -28,6 +28,7 @@ namespace Gameplay.Paddle
         {
             _lastLives = _dataProvider.playerData.lives.Value;
             _dataProvider.playerData.lives
+                .TakeWhile(i => i > 0)
                 .Subscribe(CheckNeedSpawn)
                 .AddTo(this);
         }

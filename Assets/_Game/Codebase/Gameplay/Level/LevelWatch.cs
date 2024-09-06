@@ -41,7 +41,6 @@ namespace Gameplay.Level
 
             Observable
                 .EveryUpdate()
-                .ThrottleFrame(1)
                 .Where(_ => Time.timeScale > Constants.Epsilon)
                 .Subscribe(_ => CheckWon())
                 .AddTo(_compositeDisposable);

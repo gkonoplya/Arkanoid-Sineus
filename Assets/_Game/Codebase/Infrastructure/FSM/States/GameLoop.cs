@@ -49,7 +49,7 @@ namespace Infrastructure.FSM.States
       if (_dataProvider.levelData.Highscore >= _dataProvider.playerData.scores.Value) 
         return;
       var highscore = _saveLoadService.Load<HighscoreTable>();
-      highscore.Table[_dataProvider.levelData.LevelIndex] = _dataProvider.playerData.scores.Value;
+      highscore.Table[_dataProvider.levelData.LevelIndex-1] = _dataProvider.playerData.scores.Value;
       _saveLoadService.Save(highscore);
     }
   }

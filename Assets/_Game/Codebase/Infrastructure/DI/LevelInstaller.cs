@@ -1,3 +1,4 @@
+using Gameplay;
 using Gameplay.Buffs;
 using Gameplay.Data;
 using Gameplay.Level;
@@ -21,6 +22,7 @@ namespace Infrastructure.DI
         {
             Container.BindInterfacesAndSelfTo<StandaloneInputService>().AsSingle();
             Container.Bind<LevelWatch>().AsTransient();
+            Container.Bind<ScoreWatch>().AsSingle();
             InstallFactories();
             InstallInstances();
             InstallStates();

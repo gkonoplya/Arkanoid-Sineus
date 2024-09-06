@@ -2,6 +2,7 @@
 using Infrastructure.Utils;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Buffs
 {
@@ -10,6 +11,13 @@ namespace Gameplay.Buffs
         public FloatReactiveProperty amount = new();
         public float MaxHealth { get; set; }
         private IDisposable _observable;
+        private ScoreWatch _scoreWatch;
+
+        [Inject]
+        public void Construct(ScoreWatch scoreWatch)
+        {
+            _scoreWatch = scoreWatch;
+        }
 
         private void OnEnable()
         {
@@ -27,6 +35,7 @@ namespace Gameplay.Buffs
         public void ApplyDamage(float damage)
         {
             amount.Value -= damage;
+            _scoreWatch.ReportDamage(damage);
         }
     }
 }

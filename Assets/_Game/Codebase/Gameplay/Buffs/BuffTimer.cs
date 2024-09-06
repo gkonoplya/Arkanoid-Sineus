@@ -1,4 +1,5 @@
 ﻿using System;
+using Infrastructure.Utils;
 using UniRx;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ namespace Gameplay.Buffs
             
             _disposable = Observable
                 .Interval(TimeSpan.FromSeconds(TimerInterval))
+                .Where(_ => Time.timeScale > Constants.Epsilon)
                 .TakeWhile(_ => RemainingTime.Value > 0f)
                 .Subscribe(_ =>
                 {

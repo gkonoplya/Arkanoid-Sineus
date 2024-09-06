@@ -54,7 +54,6 @@ namespace UI
             if (_levelMenuWindow != null)
             {
                 _levelMenuWindow.Close();
-                _fsm.Value.Enter<GameLoop>();
                 return;
             }
 

@@ -38,6 +38,12 @@ namespace UI
                 .Subscribe(_ => _levelPresenter.ShowHelpWindow());
         }
 
+        protected override void Cleanup()
+        {
+            base.Cleanup();
+            _gameFSM.Value.Enter<GameLoop>();
+        }
+
         public void Close() => Cleanup();
     }
 }
