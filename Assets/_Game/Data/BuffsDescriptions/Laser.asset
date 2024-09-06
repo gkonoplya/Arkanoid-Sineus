@@ -15,5 +15,5 @@ MonoBehaviour:
   description:
     Kind: 400
     Target: 0
-    Probability: 1
+    Probability: 0.2
     Duration: 15

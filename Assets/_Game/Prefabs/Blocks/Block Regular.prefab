@@ -119,4 +119,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionsSO:
   - {fileID: 11400000, guid: c3177f78d2276bd46bfc574597f21bd1, type: 2}
-  lootProbability: 0.1
+  - {fileID: 11400000, guid: 86bc7f00f3f844c4285c69af3551ccf9, type: 2}
+  lootProbability: 0.2
