@@ -10,10 +10,10 @@ namespace Gameplay.Buffs
         private readonly IInstantiator _iInstatiator;
         private readonly LevelData _levelData;
 
-        public BuffFactory(IInstantiator iInstatiator, LevelDataProvider levelData)
+        public BuffFactory(IInstantiator iInstatiator, DataProvider data)
         {
             _iInstatiator = iInstatiator;
-            _levelData = levelData.levelData;
+            _levelData = data.levelData;
         }
 
         public TimedMonobeh AddBuff(BonusDescription description)

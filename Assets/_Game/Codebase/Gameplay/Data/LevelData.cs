@@ -8,5 +8,9 @@ namespace Gameplay.Data
     {
         public GameObject Paddle;
         public GameObject Ball;
+        public int LevelIndex;
+        public int Highscore;
+        public bool LevelFinished;
+        public bool  NeedRestart;
     }
 }

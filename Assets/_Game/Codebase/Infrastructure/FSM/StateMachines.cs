@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Infrastructure.StateMachine.States;
+using Infrastructure.FSM.States;
 using Zenject;
 
 namespace Infrastructure.StateMachine

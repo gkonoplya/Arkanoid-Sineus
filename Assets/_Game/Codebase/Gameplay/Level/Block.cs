@@ -23,7 +23,7 @@ namespace Gameplay.Level
 
         private void OnDisable()
         {
-            _row.RemoveBlock(this);
+            _row?.RemoveBlock(this);
         }
 
         public BlockData GatherBlockData()

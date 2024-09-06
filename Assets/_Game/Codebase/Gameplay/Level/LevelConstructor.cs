@@ -13,12 +13,14 @@ namespace Gameplay.Level
         public GameObject blocksParent;
         private IInstantiator _instantiator;
         private AssetProvider _assetProvider;
+        private LevelPrefabs _levelPrefabs;
 
         [Inject]
-        public void Construct(IInstantiator instantiator, AssetProvider assetProvider)
+        public void Construct(IInstantiator instantiator, AssetProvider assetProvider, LevelPrefabs levelPrefabs)
         {
             _instantiator = instantiator;
             _assetProvider = assetProvider;
+            _levelPrefabs = levelPrefabs;
         }
         
         public ConstructorData GetBlockData()
@@ -29,8 +31,8 @@ namespace Gameplay.Level
             return data;
         }
 
-        public void BuildFromPrefab(string levelName) => 
-            _instantiator.InstantiatePrefab(_assetProvider.GetPrefab(levelName));
+        public void BuildFromPrefab(int levelIndex) => 
+            _instantiator.InstantiatePrefab(_levelPrefabs.Prefabs[levelIndex-1], blocksParent.transform);
 
         public void BuildFromConstructorData(ConstructorData data)
         {

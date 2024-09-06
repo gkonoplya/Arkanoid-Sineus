@@ -39,9 +39,27 @@ MonoBehaviour:
     _keyValues:
     - Bonus
     - Laser
+    - LevelMenuWindow
+    - HelpWindow
+    - Live
+    - LevelLooseWindow
+    - LevelWonWindow
+    - Row
     _keys:
     - Bonus
     - Laser
+    - LevelMenuWindow
+    - HelpWindow
+    - Live
+    - LevelLooseWindow
+    - LevelWonWindow
+    - Row
     _values:
     - {fileID: 4402699285379236034, guid: fac5af96468c43f4799fdc42438eecaa, type: 3}
     - {fileID: 8259422086691461280, guid: 4b2c4977a70307542a5a5a56ef119654, type: 3}
+    - {fileID: 8670535889275062535, guid: c7e89623c99afaf4aa0d2a255642b33c, type: 3}
+    - {fileID: 9165143942154686564, guid: af6b3c6fbc300704fb2eda51c9711e08, type: 3}
+    - {fileID: 7436588551253771665, guid: 89a903a8a1158c04989c34060ac09a72, type: 3}
+    - {fileID: 7219697837044046869, guid: 9e80a9d35294dbd4ab02c8e87cb7dfdf, type: 3}
+    - {fileID: 5005594205835277883, guid: f655482afe9671a4597d9b7ee35e7aaf, type: 3}
+    - {fileID: 1416438225043227234, guid: 2ca42f467a73ed44493db265987a3845, type: 3}

@@ -9,4 +9,10 @@ namespace Gameplay.Data
     {
         
     }
+
+    public static class ConstructorDataExtensions
+    {
+        public static bool IsValid(this ConstructorData data) =>
+            data is { Count: > 0 };
+    }
 }

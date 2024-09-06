@@ -25,10 +25,10 @@ namespace Gameplay.Paddle
 
         private void FixedUpdate()
         {
-            if (_inputService.Active && Mathf.Abs(_inputService.Axis.x) > Constants.Epsilon )
-            {
-                _rigidbody.linearVelocityX = _inputService.Axis.x * moveSpeed;
-            }
+         if (_inputService.Active && Mathf.Abs(_inputService.Axis.x) > Constants.Epsilon )
+         {
+             _rigidbody.linearVelocityX = _inputService.Axis.x * moveSpeed;
+         }
         }
     }
 }
