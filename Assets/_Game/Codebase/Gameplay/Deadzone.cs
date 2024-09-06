@@ -1,12 +1,20 @@
-﻿using UnityEngine;
+﻿using Gameplay.Data;
+using UnityEngine;
+using Zenject;
 
 namespace Gameplay
 {
     public class Deadzone : MonoBehaviour
     {
-        public void RemoveLife()
+        private DataProvider _dataProvider;
+
+        [Inject]
+        public void Construct(DataProvider dataProvider)
         {
-            
+            _dataProvider = dataProvider;
         }
+        
+        public void RemoveLife() => 
+            _dataProvider.playerData.lives.Value--;
     }
 }
