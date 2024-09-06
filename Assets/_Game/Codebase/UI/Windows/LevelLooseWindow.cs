@@ -1,7 +1,6 @@
 ﻿using Gameplay.Data;
-using Infrastructure.FSM;
 using Infrastructure.FSM.States;
-using Infrastructure.SaveLoad;
+using Infrastructure.StateMachine;
 using TMPro;
 using UniRx;
 using UnityEngine.UI;
@@ -13,14 +12,14 @@ namespace UI.Windows
     {
         public TMP_Text StatisticsText;
         public Button NextLevelButton;
-        private GameFSM _gameFsm;
+        private LazyInject<LevelStateMachine> _gameFsm;
         private DataProvider _dataProvider;
-        private SaveLoadService _saveLoadService;
-
+        
         [Inject]
-        public void Construct(DataProvider dataProvider)
+        public void Construct(DataProvider dataProvider, LazyInject<LevelStateMachine> gameFsm)
         {
             _dataProvider = dataProvider;
+            _gameFsm = gameFsm;
         }
         
         protected override void Initialize()
@@ -37,8 +36,11 @@ namespace UI.Windows
                 .First()
                 .Subscribe(_ =>
                 {
-                    _dataProvider.levelData.NeedRestart = true;
-                    _gameFsm.Enter<Level>();
+                    _gameFsm.Value.Enter<EpisodeEnd, EpisodeEndPayload>(new EpisodeEndPayload()
+                    {
+                        needRestart = true,
+                        ending = EpisodeEndPayload.Endings.Restart
+                    });
                 })
                 .AddTo(this);
         }
@@ -46,7 +48,11 @@ namespace UI.Windows
         protected override void Cleanup()
         {
             base.Cleanup();
-            _gameFsm.Enter<MainMenu>();
+            _gameFsm.Value.Enter<EpisodeEnd, EpisodeEndPayload>(new()
+            {
+                ending = EpisodeEndPayload.Endings.MainMenu,
+                levelFinished = false
+            });
         }
     }
 }

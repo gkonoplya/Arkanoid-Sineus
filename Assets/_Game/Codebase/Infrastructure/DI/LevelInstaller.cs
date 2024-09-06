@@ -47,7 +47,7 @@ namespace Infrastructure.DI
         private void InstallStates()
         {
             Container.BindInterfacesAndSelfTo<LoadData>().AsSingle();
-            //Container.BindInterfacesAndSelfTo<EpisodeEnd>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EpisodeEnd>().AsSingle();
             Container.BindInterfacesAndSelfTo<EpisodeStart>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameLoop>().AsSingle();
             Container.BindInterfacesAndSelfTo<LevelMenu>().AsSingle();

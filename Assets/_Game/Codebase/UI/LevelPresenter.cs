@@ -19,11 +19,11 @@ namespace UI
         private DataProvider _dataProvider;
         private IInputService _inputService;
         private LevelMenuWindow _levelMenuWindow;
-        private LevelStateMachine _fsm;
+        private LazyInject<LevelStateMachine> _fsm;
         private UIFactory _uiFactory;
 
         [Inject]
-        public void Construct(UIFactory uiFactory, DataProvider dataProvider, LevelStateMachine fsm,
+        public void Construct(UIFactory uiFactory, DataProvider dataProvider, LazyInject<LevelStateMachine> fsm,
             IInputService inputService)
         {
             _uiFactory = uiFactory;
@@ -54,18 +54,18 @@ namespace UI
             if (_levelMenuWindow != null)
             {
                 _levelMenuWindow.Close();
-                _fsm.Enter<GameLoop>();
+                _fsm.Value.Enter<GameLoop>();
                 return;
             }
 
             _levelMenuWindow = _uiFactory.Create<LevelMenuWindow>(transform);
-            _fsm.Enter<LevelMenu>();
+            _fsm.Value.Enter<LevelMenu>();
         }
 
         public void ShowHelpWindow() => 
             _uiFactory.Create<HelpWindow>(transform);
 
         public void ShowLooseWindow() => 
-            _uiFactory.Create<LevelLooseWindow>();
+            _uiFactory.Create<LevelLooseWindow>(transform);
     }
 }

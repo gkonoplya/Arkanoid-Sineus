@@ -14,13 +14,14 @@ namespace Gameplay.Level
         private readonly LazyInject<LevelStateMachine> _levelFsm;
         private readonly DataProvider _dataProvider;
         private readonly CompositeDisposable _compositeDisposable = new();
-        private LevelPresenter _uiPresenter;
+        private readonly LevelPresenter _uiPresenter;
         private Row[] _rows;
 
-        public LevelWatch(LazyInject<LevelStateMachine> levelFsm, DataProvider dataProvider)
+        public LevelWatch(LazyInject<LevelStateMachine> levelFsm, DataProvider dataProvider, LevelPresenter uiPresenter)
         {
             _levelFsm = levelFsm;
             _dataProvider = dataProvider;
+            _uiPresenter = uiPresenter;
         }
 
         public void Dispose()

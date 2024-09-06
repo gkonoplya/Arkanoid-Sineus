@@ -1,5 +1,6 @@
 ﻿using Infrastructure.FSM;
 using Infrastructure.FSM.States;
+using Infrastructure.StateMachine;
 using UniRx;
 using UnityEngine.UI;
 using Zenject;
@@ -10,11 +11,11 @@ namespace UI
     {
         public Button menuButton;
         public Button helpButton;
-        private GameFSM _gameFSM;
+        private LazyInject<LevelStateMachine> _gameFSM;
         private LevelPresenter _levelPresenter;
 
         [Inject]
-        public void Construct(GameFSM gameFSM, LevelPresenter levelPresenter)
+        public void Construct(LazyInject<LevelStateMachine> gameFSM, LevelPresenter levelPresenter)
         {
             _gameFSM = gameFSM;
             _levelPresenter = levelPresenter;
@@ -25,7 +26,11 @@ namespace UI
             base.Initialize();
             menuButton.OnClickAsObservable()
                 .First()
-                .Subscribe(_ => _gameFSM.Enter<MainMenu>())
+                .Subscribe(_ => _gameFSM.Value.Enter<EpisodeEnd, EpisodeEndPayload>(new()
+                {
+                    ending = EpisodeEndPayload.Endings.MainMenu,
+                    levelFinished = false
+                }))
                 .AddTo(this);
 
             helpButton.OnClickAsObservable()
