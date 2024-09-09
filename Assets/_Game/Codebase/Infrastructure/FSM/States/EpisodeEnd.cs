@@ -2,6 +2,7 @@
 using Gameplay.Data;
 using Infrastructure.SaveLoad;
 using Infrastructure.StateMachine;
+using UnityEngine;
 using Zenject;
 
 namespace Infrastructure.FSM.States
@@ -21,6 +22,8 @@ namespace Infrastructure.FSM.States
 
     public void Enter(EpisodeEndPayload payload)
     {
+      Time.timeScale = 0f;
+      
       _dataProvider.playerData.LevelCompleted = payload.levelFinished;
       _saveLoadService.Save(_dataProvider.playerData);
       
@@ -53,7 +56,7 @@ namespace Infrastructure.FSM.States
 
     public void Exit()
     {
-      
+      Time.timeScale = 1f;
     }
   }
 }

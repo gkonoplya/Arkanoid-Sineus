@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 108.6
+  m_fontSize: 120
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -165.556, y: 0, z: -151.06982, w: -90.0211}
+  m_margin: {x: -248.33401, y: 0, z: -229.70892, w: -228.67426}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeButton: {fileID: 2533380168947815256}
   NextLevelButton: {fileID: 7701150555839386857}
+  wonText: {fileID: 7861451635626586929}
 --- !u!1 &5062260044286879367
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,6 +58,7 @@ namespace Gameplay.Level
                     return;
             }
             _dataProvider.levelData.LevelFinished = true;
+            _levelFsm.Value.Enter<LevelMenu>();
             _levelPresenter.ShowWonWindow();
         }
 
