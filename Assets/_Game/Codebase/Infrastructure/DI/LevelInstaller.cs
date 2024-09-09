@@ -21,7 +21,7 @@ namespace Infrastructure.DI
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<StandaloneInputService>().AsSingle();
-            Container.Bind<LevelWatch>().AsTransient();
+            Container.Bind<LevelWatch>().AsSingle();
             Container.Bind<ScoreWatch>().AsSingle();
             InstallFactories();
             InstallInstances();

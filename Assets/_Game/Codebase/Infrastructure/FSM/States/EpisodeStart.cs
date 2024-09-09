@@ -10,13 +10,15 @@ namespace Infrastructure.FSM.States
     private readonly LazyInject<LevelStateMachine> _gameStateMachine;
     private readonly LevelConstructor _levelConstructor;
     private readonly DataProvider _dataProvider;
+    private readonly LevelWatch _levelWatch;
 
 
-    public EpisodeStart(LazyInject<LevelStateMachine> gameStateMachine, LevelConstructor levelConstructor, DataProvider dataProvider)
+    public EpisodeStart(LazyInject<LevelStateMachine> gameStateMachine, LevelConstructor levelConstructor, DataProvider dataProvider, LevelWatch levelWatch)
     {
       _gameStateMachine = gameStateMachine;
       _levelConstructor = levelConstructor;
       _dataProvider = dataProvider;
+      _levelWatch = levelWatch;
     }
 
     public void Exit()
@@ -33,8 +35,8 @@ namespace Infrastructure.FSM.States
         _levelConstructor.BuildFromPrefab(_dataProvider.playerData.currentLevelIndex);
       else
         _levelConstructor.BuildFromConstructorData(_dataProvider.constructorData);
-      
-      
+
+      _levelWatch.Start();
       _gameStateMachine.Value.Enter<GameLoop>();
     }
 

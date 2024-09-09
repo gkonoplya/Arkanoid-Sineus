@@ -32,14 +32,10 @@ namespace Gameplay.Level
         }
 
         public void BuildFromPrefab(int levelIndex) => 
-            _instantiator.InstantiatePrefab(_levelPrefabs.Prefabs[levelIndex-1], blocksParent.transform);
+            _instantiator.InstantiatePrefab(_levelPrefabs.Prefabs[levelIndex - 1], blocksParent.transform);
 
         public void BuildFromConstructorData(ConstructorData data)
         {
-            blocksParent = new GameObject()
-            {
-                name = "Blocks"
-            };
             foreach (KeyValuePair<RowData,BlockDataSD> keyValuePair in data)
             {
                 var row = _instantiator.InstantiatePrefabForComponent<Row>(
@@ -50,7 +46,16 @@ namespace Gameplay.Level
                 foreach (Block block in row.GetComponentsInChildren<Block>())
                 {
                     if (keyValuePair.Value.TryGetValue(block.SpawnPositionName, out BlockData blockData)) 
-                        block.InitWith(blockData);
+                        if (block.Type == blockData.type)
+                            block.InitWith(blockData);
+                        else
+                        {
+                            var spawnPosition = block.transform.parent;
+                            Destroy(block);
+            
+                            _instantiator.InstantiatePrefabForComponent<Block>(
+                                _assetProvider.GetComponentOnPrefab<Block>(blockData.type.ToString()), spawnPosition);
+                        }
                     else
                         block.gameObject.SetActive(false);
                 }

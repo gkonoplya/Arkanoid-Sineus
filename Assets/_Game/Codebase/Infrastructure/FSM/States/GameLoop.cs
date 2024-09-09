@@ -31,14 +31,11 @@ namespace Infrastructure.FSM.States
       
       _dataProvider.playerData.LevelCompleted = false;
       
-      _levelWatch.Start();
     }
 
     public void Exit()
     {
       UpdateHighScore();
-
-      _levelWatch.Dispose();
 
       _saveLoadService.Save(_dataProvider.playerData);
       _saveLoadService.Save(_levelConstructor.GetBlockData());
