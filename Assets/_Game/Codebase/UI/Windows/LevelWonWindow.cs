@@ -1,5 +1,4 @@
-﻿using Infrastructure.FSM;
-using Infrastructure.FSM.States;
+﻿using Infrastructure.FSM.States;
 using Infrastructure.StateMachine;
 using UniRx;
 using UnityEngine.UI;

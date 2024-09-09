@@ -66,5 +66,8 @@ namespace UI
 
         public void ShowLooseWindow() => 
             _uiFactory.Create<LevelLooseWindow>(transform);
+
+        public void ShowWonWindow() => 
+            _uiFactory.Create<LevelWonWindow>(transform);
     }
 }

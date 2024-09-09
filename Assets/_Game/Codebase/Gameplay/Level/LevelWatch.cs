@@ -11,19 +11,21 @@ using Zenject;
 
 namespace Gameplay.Level
 {
-    public class LevelWatch
+    public class LevelWatch: IDisposable
     {
         private readonly LazyInject<LevelStateMachine> _levelFsm;
         private readonly DataProvider _dataProvider;
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly LevelPresenter _uiPresenter;
         private IList<Row> _rows;
+        private readonly LevelPresenter _levelPresenter;
 
-        public LevelWatch(LazyInject<LevelStateMachine> levelFsm, DataProvider dataProvider, LevelPresenter uiPresenter)
+        public LevelWatch(LazyInject<LevelStateMachine> levelFsm, DataProvider dataProvider, LevelPresenter uiPresenter, LevelPresenter levelPresenter)
         {
             _levelFsm = levelFsm;
             _dataProvider = dataProvider;
             _uiPresenter = uiPresenter;
+            _levelPresenter = levelPresenter;
         }
 
         public void Dispose()
@@ -43,6 +45,7 @@ namespace Gameplay.Level
             Observable
                 .Interval(TimeSpan.FromSeconds(0.5f))
                 .Where(_ => Time.timeScale > Constants.Epsilon)
+                .TakeWhile(_ => !_dataProvider.levelData.LevelFinished)
                 .Subscribe(_ => CheckWon())
                 .AddTo(_compositeDisposable);
         }
@@ -55,7 +58,7 @@ namespace Gameplay.Level
                     return;
             }
             _dataProvider.levelData.LevelFinished = true;
-            _levelFsm.Value.Enter<LevelMenu>();
+            _levelPresenter.ShowWonWindow();
         }
 
         private void Loose()

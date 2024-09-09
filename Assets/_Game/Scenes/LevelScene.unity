@@ -764,6 +764,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 368388700}
     m_Modifications:
+    - target: {fileID: 815453977242650613, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Size.x
+      value: 4.713922
+      objectReference: {fileID: 0}
+    - target: {fileID: 815453977242650613, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.856961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389909610388646384, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Size.x
+      value: 6.5843263
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389909610388646384, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.7921631
+      objectReference: {fileID: 0}
     - target: {fileID: 1435652445076004776, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -823,6 +839,14 @@ PrefabInstance:
     - target: {fileID: 5723989866912794690, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880958953464864027, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Size.y
+      value: 4.786773
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880958953464864027, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.8933866
       objectReference: {fileID: 0}
     - target: {fileID: 8323392872346939904, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
       propertyPath: m_Enabled
@@ -917,17 +941,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1916311053}
     m_Modifications:
-    - target: {fileID: 1803731518279194398, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
-      propertyPath: paddleAcceleration
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 4491876777676456726, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 5321735950110261304, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
-      propertyPath: maxSpeed
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8679717963809283512, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_LocalPosition.x
