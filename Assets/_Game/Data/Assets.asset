@@ -47,6 +47,10 @@ MonoBehaviour:
     - Row
     - Paddle
     - Ball
+    - IndestructibleBlock
+    - RegularBlock
+    - PowerBlock
+    - BonusBlock
     _keys:
     - Bonus
     - Laser
@@ -58,6 +62,10 @@ MonoBehaviour:
     - Row
     - Paddle
     - Ball
+    - IndestructibleBlock
+    - RegularBlock
+    - PowerBlock
+    - BonusBlock
     _values:
     - {fileID: 4402699285379236034, guid: fac5af96468c43f4799fdc42438eecaa, type: 3}
     - {fileID: 8259422086691461280, guid: 4b2c4977a70307542a5a5a56ef119654, type: 3}
@@ -69,3 +77,7 @@ MonoBehaviour:
     - {fileID: 1416438225043227234, guid: 2ca42f467a73ed44493db265987a3845, type: 3}
     - {fileID: 806551743910117955, guid: c75a0fec406e22c4b83131eae12d6449, type: 3}
     - {fileID: 4491876777676456726, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
+    - {fileID: 6738924211883683937, guid: 69c687656b941cb42a2daf881d09874b, type: 3}
+    - {fileID: 810299350628797503, guid: 73b97b583a67c814d8b2494b74079e3c, type: 3}
+    - {fileID: 7099091817502405904, guid: c832561ba852aa54681d027b715ccce0, type: 3}
+    - {fileID: 3907363158635191787, guid: 61494c07d9b67134a899940546a99e10, type: 3}

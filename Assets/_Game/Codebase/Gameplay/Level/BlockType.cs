@@ -3,9 +3,9 @@
     public enum BlockType
     {
         None = 0,
-        Indestructible = 10,
-        Regular = 20,
-        Power = 30,
-        Bonus = 40
+        IndestructibleBlock = 10,
+        RegularBlock = 20,
+        PowerBlock = 30,
+        BonusBlock = 40
     }
 }
