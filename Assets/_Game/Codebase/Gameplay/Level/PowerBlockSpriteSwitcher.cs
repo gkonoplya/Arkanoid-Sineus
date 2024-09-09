@@ -12,19 +12,19 @@ namespace Gameplay.Level
 
         private void Start()
         {
+            _renderer = GetComponent<SpriteRenderer>();
             var health = GetComponent<Health>();
             _maxHealth = health.MaxHealth;
-            
+
             health.amount
                 .TakeWhile(x => x > Constants.Epsilon)
                 .Subscribe(ChangeSprite)
                 .AddTo(this);
-            _renderer = GetComponent<SpriteRenderer>();
         }
 
         private void ChangeSprite(float currentHealth)
         {
-            int index = Mathf.CeilToInt(currentHealth / _maxHealth);
+            int index = Mathf.CeilToInt(currentHealth / _maxHealth * Sprites.Count) - 1;
             _renderer.sprite = Sprites[index];
         }
     }
