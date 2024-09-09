@@ -816,9 +816,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walls
       objectReference: {fileID: 0}
+    - target: {fileID: 5662089716650945148, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723989866912794690, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8323392872346939904, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011390419076914142, guid: 0183b6316ca04bd4b949b7d17c94d7e8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -905,9 +917,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1916311053}
     m_Modifications:
+    - target: {fileID: 1803731518279194398, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
+      propertyPath: paddleAcceleration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4491876777676456726, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321735950110261304, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
+      propertyPath: maxSpeed
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8679717963809283512, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_LocalPosition.x
@@ -915,7 +935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679717963809283512, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4959998
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8679717963809283512, guid: 36e4f43855f227748a619bf63ef76d19, type: 3}
       propertyPath: m_LocalPosition.z

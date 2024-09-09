@@ -12,6 +12,7 @@ namespace Gameplay.Buffs
         public Vector2 savedVelocity;
         private IInputService _inputService;
         private Rigidbody2D _rb;
+        private BallBouncer _bouncer;
 
         [Inject]
         public void Construct(IInputService inputService)
@@ -57,6 +58,9 @@ namespace Gameplay.Buffs
             _rb = self.GetComponent<Rigidbody2D>();
             savedVelocity = _rb.linearVelocity;
             _rb.simulated = false;
+            
+            _bouncer = self.GetComponent<BallBouncer>();
+            _bouncer.enabled = false;
 
             Vector3 offset = self.transform.position - paddle.transform.position;
             paddle.transform
@@ -73,6 +77,8 @@ namespace Gameplay.Buffs
         {
             rb.simulated = true;
             rb.linearVelocity = savedVelocity;
+
+            _bouncer.enabled = true;
         }
     }
 }

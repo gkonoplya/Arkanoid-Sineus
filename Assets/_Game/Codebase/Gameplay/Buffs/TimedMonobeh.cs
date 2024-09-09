@@ -41,5 +41,10 @@ namespace Gameplay.Buffs
             RemainingTime = descriptionDuration;
             HasTimer = true;
         }
+
+        protected virtual void OnDestroy()
+        {
+            _timer.Dispose();
+        }
     }
 }
